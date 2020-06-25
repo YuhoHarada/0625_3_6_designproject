@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&display=swap');
+
+body{
+    font-family: 'Karla', sans-serif;
+}
+
+/* 
+
+Farbe: #323A45 / #848484
+
+font-family: 'Karla', sans-serif;
+
+# Phone
+only screen and (max-width:320px)
+# Tablet
+only screen and (min-width:321px) and (max-width:768px)
+# Desktop
+only screen and (min-width:769px)
+
+*/
