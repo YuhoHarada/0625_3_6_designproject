@@ -21,17 +21,25 @@ header h1{
     font-size: 1.5em;
 }
 
-header nav ul{
+header nav input, header nav label{
+    display: none;
+}
+
+#nav_content{
     display: flex;
     list-style: none;
 }
 
-header nav ul li a{
+#nav_content li a{
     display: inline-block;
     padding-left: 70px;
     text-decoration: none;
     color: #323A45;
     font-weight: 700;
+}
+
+#nav_content li a:hover{
+    color: #848484;
 }
 
 /* ************* main ************* */
@@ -51,23 +59,28 @@ main article:nth-of-type(7n+1){
 }
 
 main article div{
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 
+    "N P"
+    "M P";
+    gap: 10px;
     line-height: 1.5em;
     margin-bottom: 30px;
 }
 
 .name{
+    grid-area: N;
     font-weight: 700;
 }
 
 .price{
-    position: absolute;
-    top: 0;
-    right: 0;
+    grid-area: P;
     font-weight: 700;
 }
 
 .manufacturer{
+    grid-area: M;
     color: #848484;
 }
 
@@ -77,6 +90,7 @@ footer{
     padding: 50px 0;
     display: grid;
     grid-template-columns: 35% 1fr 1fr 1fr;
+    gap: 10px;
     font-size: 1rem;
 }
 
@@ -107,15 +121,95 @@ footer div:last-of-type{
 
 
 
+/* ************* Tablet */
+@media (max-width:768px)  {
+    header{
+        padding: 20px 0;
+    }
 
+    header nav{
+        position: relative;
+    }
 
-/* 
+    #nav_open{
+        display: inline-block;
+        width: 30px;
+        height: 28px;
+        vertical-align: middle;
+    }
 
-# Phone
-only screen and (max-width:320px)
-# Tablet
-only screen and (min-width:321px) and (max-width:768px)
-# Desktop
-only screen and (min-width:769px)
+    #nav_open span, #nav_open span::before, #nav_open span::after{
+        position: absolute;
+        height: 5px;
+        width: 30px;
+        border-radius: 3px;
+        background: #848484;
+        display: block;
+        content: '';
+        cursor: pointer;
+    }
 
-*/
+    #nav_open span::before{
+        bottom: -11px;
+    }
+    
+    #nav_open span::after{
+        bottom: -22px;
+    }
+
+    #nav_close{
+        display: none;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        opacity: 0;
+    }
+
+    #nav_content{
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 999;
+        width: 70vw;
+        max-width: 300px;
+        height: 100%;
+        background: #fff;
+        transition: 0.5s ease-in-out;
+        transform: translateX( calc( 300px + 5vw));
+        padding-top: 30px;
+    }
+
+    #nav_content li a{
+        padding: 0;
+        line-height: 2em;
+    }
+
+    #nav_input:checked~#nav_close{
+        display: block;
+        opacity: 0.5;
+    }
+
+    #nav_input:checked~#nav_content{
+        transform: translateX(0px);
+    }
+
+    main{
+        display: block;
+    }
+
+    footer{
+        display: block;
+    }
+}
+
+/* ************* Phone */
+@media (max-width:320px) {
+    html{
+        font-size: 14px;
+    }
+}
