@@ -54,6 +54,10 @@ img{
     margin-bottom: 20px;
 }
 
+img:hover{
+    opacity: 0.5;
+}
+
 main article:nth-of-type(7n+1){
     grid-column: span 3;
 }
