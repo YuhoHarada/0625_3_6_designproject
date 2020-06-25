@@ -6,30 +6,110 @@
 
 body{
     font-family: 'Karla', sans-serif;
+    color: #323A45;
     padding: 0 5%;
+}
+
+/* ************* header ************* */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+header h1{
+    font-size: 1.5em;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li a{
+    display: inline-block;
+    padding-left: 70px;
+    text-decoration: none;
+    color: #323A45;
+    font-weight: 700;
+}
+
+/* ************* main ************* */
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
 }
 
 img{
     width: 100%;
-}
-
-
-
-main{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    margin-bottom: 20px;
 }
 
 main article:nth-of-type(7n+1){
     grid-column: span 3;
 }
 
+main article div{
+    position: relative;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+}
+
+.name{
+    font-weight: 700;
+}
+
+.price{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 700;
+}
+
+.manufacturer{
+    color: #848484;
+}
+
+
+/* ************* footer ************* */
+footer{
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 35% 1fr 1fr 1fr;
+    font-size: 1rem;
+}
+
+footer div{
+    margin-bottom: 50px;
+}
+
+footer h1, footer h3{
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+footer a{
+    color: #323A45;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover{
+    color: #848484;
+}
+
+footer div:last-of-type{
+    color: #848484;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+}
+
+
+
+
+
 /* 
-
-Farbe: #323A45 / #848484
-
-font-family: 'Karla', sans-serif;
 
 # Phone
 only screen and (max-width:320px)
