@@ -178,14 +178,13 @@ footer div:last-of-type{
         display: block;
         position: fixed;
         top: 0;
-        right: 0;
+        right: calc( -300px - 5vw);
         z-index: 999;
         width: 70vw;
         max-width: 300px;
         height: 100%;
         background: #fff;
         transition: 0.5s ease-in-out;
-        transform: translateX( calc( 300px + 5vw));
         padding-top: 30px;
     }
 
@@ -200,7 +199,7 @@ footer div:last-of-type{
     }
 
     #nav_input:checked~#nav_content{
-        transform: translateX(0px);
+        transform: translateX(calc(-300px - 5vw));
     }
 
     main{
